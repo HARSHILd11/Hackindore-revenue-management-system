@@ -20,24 +20,25 @@ function Nav_bar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
             >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Online Services</Nav.Link>
-            <Nav.Link href="#action2">Online Schemes</Nav.Link>
-            <Nav.Link href="#action2">Explore City</Nav.Link>
-            <Nav.Link href="#action2">Indore</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+            <Nav.Link href="#action1" className='nav-links'>Home</Nav.Link>
+            <Nav.Link href="#action2"className='nav-links'>Taxes</Nav.Link>
+            <Nav.Link href="#action2"className='nav-links'>Online Payments</Nav.Link>
+            <Nav.Link href="#action2"className='nav-links'>DashBoardr</Nav.Link>
+            <Nav.Link href="#action2"className='nav-links'>Indore</Nav.Link>
+            <NavDropdown title="More" id="navbarScrollingDropdown"className='nav-links'>
+              <NavDropdown.Item href="#action3">About Us</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
-                Another action
+                Services
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                Departments
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
-                Something else here
+                News & Updates
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            
           </Nav>
           <Form className="d-flex">
             <Form.Control
