@@ -23,7 +23,7 @@ function Nav_bar() {
             <Nav.Link href="#action1" className='nav-links'>Home</Nav.Link>
             <Nav.Link href="#action2"className='nav-links'>Taxes</Nav.Link>
             <Nav.Link href="#action2"className='nav-links'>Online Payments</Nav.Link>
-            <Nav.Link href="#action2"className='nav-links'>DashBoardr</Nav.Link>
+            <Nav.Link href="#action2"className='nav-links'>DashBoard</Nav.Link>
             <Nav.Link href="#action2"className='nav-links'>Indore</Nav.Link>
             <NavDropdown title="More" id="navbarScrollingDropdown"className='nav-links'>
               <NavDropdown.Item href="#action3">About Us</NavDropdown.Item>
@@ -41,13 +41,9 @@ function Nav_bar() {
             
           </Nav>
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              />
-            <Button variant="outline-success">Search</Button>
+      
+            <Button variant="outline-success ">Login</Button>
+            <Button variant="outline-danger">Sign-Up</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
