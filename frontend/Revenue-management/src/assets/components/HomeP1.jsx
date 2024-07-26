@@ -10,8 +10,8 @@ export default function HomeP1() {
 
         {/* //------1st container */}
         <div id="homeP1-1">
-            <div id="tag-line1">Lorem ipsum dolor sit amet Your city, your taxes, our responsibility nihil!</div>
-            <div id="tag-line2">Lorem ipsum dolor sit amet ectetur adipisicing elit. Laboriosam cum officia nihil!</div>
+            <div id="tag-line1"> Your city, your taxes, our responsibility !</div>
+            <div id="tag-line2">We ❤ INDORE</div>
         </div>
         {/* -----------2nd Container */}
         <div id="homeP1-2">
