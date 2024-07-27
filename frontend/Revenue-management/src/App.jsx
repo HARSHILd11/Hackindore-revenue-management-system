@@ -2,8 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav_bar from "./assets/components/Nav_bar"
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+
 import UserDashboard from './assets/components/User-dashboard'; 
 
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
@@ -15,7 +14,6 @@ function App() {
   return (
     
    <>
-   
       <Nav_bar></Nav_bar>
     <BrowserRouter>
     
@@ -24,7 +22,6 @@ function App() {
       <Route path="/user-dashboard" element={<UserDashboard />} />
       <Route path="/signup" element={<RegistrationForm/>} />
     </Routes>
-    <ToastContainer theme='light'></ToastContainer>
   </BrowserRouter>
    </>
   );

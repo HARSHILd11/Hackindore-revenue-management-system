@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const { jwt_secret } = require("../keys")
 const jwt = require("jsonwebtoken")
 const requireLogin = require("../middlewares/requireLogin")
-const wbm=require("wbm");
+
 
 // Signup Route
 router.get("/signup", (req, res) => {

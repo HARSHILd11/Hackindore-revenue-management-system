@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Container, Row, Col, Button, Alert } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [username, setUsername] = useState('');
@@ -9,9 +8,7 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-
   const handleSubmit = async (event) => {
-    const navigate=useNavigate()
     event.preventDefault();
     // TO DO: Implement form submission logic here
     // For now, just log the form data to the console
@@ -22,46 +19,6 @@ const RegistrationForm = () => {
       password,
     });
   };
-
-
-  // Data posting function -----------
-
-  const postData = () => {
-    console.log({
-      username,
-      aadharNo,
-      mobile,
-      password,
-    })
-    fetch("http://localhost:8080/signup",
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          username:username,
-          aadharNo:aadharNo,
-          mobile:mobile,
-          password:password
-        })
-      }
-    ).then((res) => res.json())
-      .then((data) => {
-        if (data.message) {
-          notifyA(data.message)
-          navigate("/signin")
-        }
-        if (data.error) {
-          notifyB(data.error)
-        }
-      })
-
-    // Toast Function ----------- ---------- --------- -------
-    const notifyA = (msg) => toast.success(msg)
-    const notifyB = (msg) => toast.error(msg)
-  }
-
 
   return (
     <Container fluid className="bg-light">
@@ -113,8 +70,10 @@ const RegistrationForm = () => {
               {errors.password && <Form.Text className="text-danger">{errors.password}</Form.Text>}
             </Form.Group>
 
-            
-            <input type="button" value="Sign-up" onClick={postData} className="signup-btn mt-4" />
+            <Button variant="primary" type="submit" className="mt-4">
+              Register
+            </Button>
+
             {errors.form && <Alert variant="danger" className="mt-4">{errors.form}</Alert>}
           </Form>
         </Col>
