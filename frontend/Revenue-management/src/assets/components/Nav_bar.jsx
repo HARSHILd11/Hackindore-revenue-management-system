@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import mncLogo from "../img/mncLogo.png"
 import "./Nav_bar.css"
 
@@ -12,7 +13,7 @@ function Nav_bar() {
   <>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <img id='mnc-logo' src={mncLogo} alt="" />
+        <img id='mnc-logo' src={mncLogo} alt="" /><span>Indore Municipal Corporation</span>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -23,7 +24,7 @@ function Nav_bar() {
             <Nav.Link href="#action1" className='nav-links'>Home</Nav.Link>
             <Nav.Link href="#action2"className='nav-links'>Taxes</Nav.Link>
             <Nav.Link href="#action2"className='nav-links'>Online Payments</Nav.Link>
-            <Nav.Link href="#action2"className='nav-links'>DashBoard</Nav.Link>
+            <Nav.Link className='nav-links' to="/User-dashboard">DashBoard</Nav.Link>
             <Nav.Link href="#action2"className='nav-links'>Indore</Nav.Link>
             <NavDropdown title="More" id="navbarScrollingDropdown"className='nav-links'>
               <NavDropdown.Item href="#action3">About Us</NavDropdown.Item>
