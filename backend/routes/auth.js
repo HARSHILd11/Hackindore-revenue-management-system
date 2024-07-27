@@ -13,17 +13,14 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-    const { username, aadharno, otpvalidate, password , mobilenumber} = req.body;
-
-
+    const { username, aadharno, password , mobileno} = req.body;
+    console.log(req.body)
 
     // Check for required fields
-    if (!username || !aadharno || !mobilenumber) {
+    if (!username||!aadharno||!mobileno) {
         return res.status(400).json({error : "Please add Username and aadhar number correctly"});
     }
-    if(!otpvalidate){
-        return res.status(400).json({error : "Please Enter Otp Correctly"});
-    }
+   
     if(!password){
         return res.status(400).json({error :"please enter password"});
     }
@@ -31,7 +28,7 @@ router.post("/signup", (req, res) => {
     // Check if user with the same government ID is already registered
     USERS.findOne({ username })
         .then((savedUser) => {
-            if (savedUser) {
+            if (savedUser) { 
                 return res.json({ message: "User with Same username is already registered" });
             }
             // Hash the password and save the user
@@ -39,7 +36,7 @@ router.post("/signup", (req, res) => {
                 const user = new USERS({
                     username,
                     aadharno,
-                    otpvalidate,
+                    mobileno,
                     password: hashedPassword,
                 });
 

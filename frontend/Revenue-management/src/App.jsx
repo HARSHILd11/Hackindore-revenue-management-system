@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Home from './assets/components/Home';
 import Signup from './assets/components/Signup';
+import Signin from './assets/components/Signin';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/user-dashboard" element={<UserDashboard />} />
       <Route path="/signup" element={<Signup/>} />
+      <Route path="/signin" element={<Signin/>} />
     </Routes>
     <ToastContainer theme='light'></ToastContainer>
   </BrowserRouter>

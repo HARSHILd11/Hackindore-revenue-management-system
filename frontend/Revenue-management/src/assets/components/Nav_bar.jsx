@@ -46,7 +46,7 @@ function Nav_bar() {
             </Nav>
             <Form className="d-flex">
 
-              <Button variant="outline-success ">Login</Button>
+              <Button variant="outline-success" onClick={()=>{navigate("/signin")}}>Login</Button>
               <Button variant="outline-danger" onClick={()=>{navigate("/signup")}}>Sign-Up</Button>
             </Form>
           </Navbar.Collapse>
