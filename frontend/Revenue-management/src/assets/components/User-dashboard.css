@@ -1,0 +1,132 @@
+.Dashboard-container{
+    display: flex;
+    flex-direction: column;
+ height: 700px;
+    border: 1px solid black;
+  
+}
+.line-graph{
+    margin-left: 3%;
+    border: 2px solid black ;
+  }
+
+  .status-display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+text-align: center;
+    margin:20px 0px;
+    
+}
+
+.status-display-container{
+    width: 70%;
+}
+
+.status-box
+{
+    width: 190px;
+    height: 130px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center     ;
+    
+}
+
+.payment-display{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-left: 2%;
+    border: 2px solid black;
+    width: 27%;
+    margin: 1% 2%;
+    text-align: center;
+}
+.upper-dashboard{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.lower-dashboard{
+   width: 100%;
+   height: 80px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 100%;
+   justify-content: space-evenly;
+}
+
+.lower-dashboard .piechart{
+    height: 200px;
+    margin-top:1%;
+    margin-left: 5%;
+}
+.ld-status-box{
+    border: 2px solid black;
+    width: 20%;
+    height: 220%;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center  ;
+}
+@media screen and (max-width: 480px) {
+    #homeP1-1{
+        margin: auto 2%;
+    }
+    .homep1-container{
+        height: 100%;
+    }
+    #tag-line1{
+        font-size: 2em;
+    }
+    #tag-line2{
+        font-size: 1.3em;
+    
+    }
+    
+.Dashboard-container{
+    display: flex;
+   
+ flex-direction: column;
+    border: 1px solid black;
+    height: 80%;
+}
+
+.status-display-container{
+    width: 100%;
+}
+
+.line-graph{
+    margin: 3%;
+    border: 2px solid black ;
+  }
+
+.status-display{
+    margin:5px 6px ;
+
+}
+.status-box
+{
+    width: 110px;
+    height: 110px;
+    border: 1px solid black;
+    
+}
+.payment-display{
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+   
+    height: 180%;
+}
+
+
+
+
+}
