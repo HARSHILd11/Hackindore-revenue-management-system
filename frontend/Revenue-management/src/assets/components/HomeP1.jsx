@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './HomeP1.css';
 import home_side from '../img/home-side-img.gif';
 import secondImage from '../img/home-side-image.png';
-
+import Regform from "./RegistrationForm" 
+import Udashboard from "./User-dashboard"
 
 export default function HomeP1() {
   const [showSecondImage, setShowSecondImage] = useState(false);
@@ -31,8 +32,12 @@ export default function HomeP1() {
           )}
         </div>
       </div>
-
-    
+<div>
+  <Udashboard></Udashboard>
+</div>
+    <div>
+      <Regform></Regform>
+    </div>
     </>
   );
 }
