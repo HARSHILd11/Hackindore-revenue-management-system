@@ -26,7 +26,7 @@ function Nav_bar() {
             >
               <Nav.Link href="/" className='nav-links'>Home</Nav.Link>
               <Nav.Link href="#action2" className='nav-links'>Taxes</Nav.Link>
-              <Nav.Link href="#action2" className='nav-links'>Online Payments</Nav.Link>
+              <Nav.Link href="/payments" className='nav-links'>Online Payments</Nav.Link>
               <Nav.Link className='nav-links' href='/User-dashboard' to="/User-dashboard">DashBoard</Nav.Link>
               <Nav.Link href="/calculator" className='nav-links'>Calculator</Nav.Link>
               <NavDropdown title="More" id="navbarScrollingDropdown" className='nav-links'>
