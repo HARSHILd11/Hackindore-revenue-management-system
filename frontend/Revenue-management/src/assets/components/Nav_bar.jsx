@@ -4,11 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 import mncLogo from "../img/mncLogo.png"
 import "./Nav_bar.css"
 
 function Nav_bar() {
+  const navigate = useNavigate()
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -45,8 +46,8 @@ function Nav_bar() {
             </Nav>
             <Form className="d-flex">
 
-              <Button variant="outline-success ">Login</Button>
-              <Button variant="outline-danger" href='/signup'>Sign-Up</Button>
+              <Button variant="outline-success" onClick={()=>{navigate("/signin")}}>Login</Button>
+              <Button variant="outline-danger" onClick={()=>{navigate("/signup")}}>Sign-Up</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
