@@ -23,10 +23,10 @@ function Nav_bar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1" className='nav-links'>Home</Nav.Link>
+              <Nav.Link href="/" className='nav-links'>Home</Nav.Link>
               <Nav.Link href="#action2" className='nav-links'>Taxes</Nav.Link>
               <Nav.Link href="#action2" className='nav-links'>Online Payments</Nav.Link>
-              <Nav.Link className='nav-links' to="/User-dashboard">DashBoard</Nav.Link>
+              <Nav.Link className='nav-links' href='/User-dashboard' to="/User-dashboard">DashBoard</Nav.Link>
               <Nav.Link href="#action2" className='nav-links'>Indore</Nav.Link>
               <NavDropdown title="More" id="navbarScrollingDropdown" className='nav-links'>
                 <NavDropdown.Item href="#action3">About Us</NavDropdown.Item>
@@ -46,7 +46,7 @@ function Nav_bar() {
             <Form className="d-flex">
 
               <Button variant="outline-success ">Login</Button>
-              <Button variant="outline-danger">Sign-Up</Button>
+              <Button variant="outline-danger" href='/signup'>Sign-Up</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

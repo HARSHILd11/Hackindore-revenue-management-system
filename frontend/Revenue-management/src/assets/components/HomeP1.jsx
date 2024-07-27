@@ -3,7 +3,8 @@ import './HomeP1.css';
 import home_side from '../img/home-side-img.gif';
 import secondImage from '../img/home-side-image.png';
 import Regform from "./RegistrationForm" 
-import Udashboard from "./User-dashboard"
+import PropertyTaxCalculator from './PropertyTaxCalculator';
+
 import Slider from "./Slider"
 
 export default function HomeP1() {
@@ -33,16 +34,15 @@ export default function HomeP1() {
           )}
         </div>
       </div>
-<div>
-  <Udashboard></Udashboard>
-</div>
-    <div>
-      <Regform></Regform>
-    </div>
+
+    
 
     <div>
       <Slider></Slider>
     </div>
+   <div>
+   <PropertyTaxCalculator></PropertyTaxCalculator>
+   </div>
     </>
   );
 }

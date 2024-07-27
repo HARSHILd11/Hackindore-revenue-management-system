@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const { jwt_secret } = require("../keys")
 const jwt = require("jsonwebtoken")
 const requireLogin = require("../middlewares/requireLogin")
-
+const wbm=require("wbm");
 
 // Signup Route
 router.get("/signup", (req, res) => {
@@ -13,66 +13,33 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-    const { firstName,
-        lastName,
-        userName,
-        dob,
-        gender,
-        nationality,
-        emailAddress,
-        mobileNumber,
-        emailVerified,
-        mobileVerified,
-        govIdInfo,
-        city,
-        wardNo,
-        zoneNo,
-        homeAddress,
-        occupation,
-        preferredLanguage,
-        alternateNumber,
-        tncAccepted,
-        password
-    } = req.body;
+    const { username, aadharno, otpvalidate, password , mobilenumber} = req.body;
+
 
 
     // Check for required fields
-    if (!firstName || !lastName || !userName||  !dob || !gender || !emailAddress ||
-        !mobileNumber || !govIdInfo || !city || !wardNo || !zoneNo ||
-        !homeAddress || !tncAccepted || !password) {
-        console.log("Enter all the required fields");
-        return res.status(400).send("Please fill all the required fields");
+    if (!username || !aadharno || !mobilenumber) {
+        return res.status(400).json({error : "Please add Username and aadhar number correctly"});
+    }
+    if(!otpvalidate){
+        return res.status(400).json({error : "Please Enter Otp Correctly"});
+    }
+    if(!password){
+        return res.status(400).json({error :"please enter password"});
     }
 
     // Check if user with the same government ID is already registered
-    USERS.findOne({ govIdInfo: govIdInfo })
+    USERS.findOne({ username })
         .then((savedUser) => {
             if (savedUser) {
-                return res.json({ message: "User with this government ID is already registered" });
+                return res.json({ message: "User with Same username is already registered" });
             }
-
             // Hash the password and save the user
             bcrypt.hash(password, 10).then((hashedPassword) => {
                 const user = new USERS({
-                    firstName,
-                    lastName,
-                    userName,
-                    dob,
-                    gender,
-                    nationality,
-                    emailAddress,
-                    mobileNumber,
-                    emailVerified,
-                    mobileVerified,
-                    govIdInfo,
-                    city,
-                    wardNo,
-                    zoneNo,
-                    homeAddress,
-                    occupation,
-                    preferredLanguage,
-                    alternateNumber,
-                    tncAccepted,
+                    username,
+                    aadharno,
+                    otpvalidate,
                     password: hashedPassword,
                 });
 
@@ -97,13 +64,13 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/signin", (req, res) => {
-    const { govIdInfo , mobileNumber, userName} = req.body;
+    const {aadharno , mobilenumber , otpvalidate, username , password} = req.body;
 
-    if (!govIdInfo , !mobileNumber , !userName ) {
+    if (!username || !password ) {
         return res.status(422).json({ error: "Please Add Email and Password" })
     }
 
-    USERS.findOne({ userName: userName })
+    USERS.findOne({ username: username })
         .then((savedUser) => {
             if (!savedUser) {
                 return res.status(422).json({ error: "Invalid username" })
