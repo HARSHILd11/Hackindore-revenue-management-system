@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    userName : {
+        type : String,
+        required : true
+    },
     dob: {
         type: String,
         required: true,
@@ -51,6 +55,9 @@ const userSchema = new mongoose.Schema({
     },
     alternateNumber: {
         type: String,
+    },
+    password : {
+        type : String,
     },
     tncAccepted: {
         type: Boolean,
