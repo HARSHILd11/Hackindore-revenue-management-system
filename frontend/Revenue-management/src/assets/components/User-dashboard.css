@@ -95,7 +95,7 @@ text-align: center;
    
  flex-direction: column;
     border: 1px solid black;
-    height: 80%;
+    height: 100vh;
 }
 
 .status-display-container{
@@ -125,8 +125,17 @@ text-align: center;
    
     height: 180%;
 }
+.upper-dashboard{
+    display: flex;
+    flex-direction: column;
+    
+}
+.payment-display{
+    height: 110px;
+    margin-left: 2%;
+    margin-right: 2%;
 
-
+}
 
 
 }

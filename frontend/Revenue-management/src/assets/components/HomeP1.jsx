@@ -4,6 +4,7 @@ import home_side from '../img/home-side-img.gif';
 import secondImage from '../img/home-side-image.png';
 import Regform from "./RegistrationForm" 
 import Udashboard from "./User-dashboard"
+import Slider from "./Slider"
 
 export default function HomeP1() {
   const [showSecondImage, setShowSecondImage] = useState(false);
@@ -11,7 +12,7 @@ export default function HomeP1() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSecondImage(true);
-    }, 3500);
+    }, 7000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -37,6 +38,10 @@ export default function HomeP1() {
 </div>
     <div>
       <Regform></Regform>
+    </div>
+
+    <div>
+      <Slider></Slider>
     </div>
     </>
   );
