@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const USERS = require("../models/user");
+const {User} = require("../models/user");
 const bcrypt = require('bcrypt');
 const { jwt_secret } = require("../keys")
 const jwt = require("jsonwebtoken")
-const requireLogin = require("../middlewares/requireLogin")
+
 
 
 // Signup Route
@@ -26,14 +26,14 @@ router.post("/signup", (req, res) => {
     }
 
     // Check if user with the same government ID is already registered
-    USERS.findOne({ username })
+    User.findOne({ username })
         .then((savedUser) => {
             if (savedUser) { 
                 return res.json({ message: "User with Same username is already registered" });
             }
             // Hash the password and save the user
             bcrypt.hash(password, 10).then((hashedPassword) => {
-                const user = new USERS({
+                const user = new User({
                     username,
                     aadharno,
                     mobileno,
@@ -67,7 +67,7 @@ router.post("/signin", (req, res) => {
         return res.status(422).json({ error: "Please Add Email and Password" })
     }
 
-    USERS.findOne({ username: username })
+    User.findOne({ username: username })
         .then((savedUser) => {
             if (!savedUser) {
                 return res.status(422).json({ error: "Invalid username" })
