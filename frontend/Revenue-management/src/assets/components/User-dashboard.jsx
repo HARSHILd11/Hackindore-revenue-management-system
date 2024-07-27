@@ -9,7 +9,7 @@ export default function DashBoard() {
     return (
       <>
      
-     <div className="Dashboard-container">
+     <div className="Dashboard-container1">
         <div className="upper-dashboard">
           <div className="status-display-container">
             <div className="status-display">
