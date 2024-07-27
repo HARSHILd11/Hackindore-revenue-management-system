@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './HomeP1.css';
 import home_side from '../img/home-side-img.gif';
 import secondImage from '../img/home-side-image.png';
-import Chart from './Chart';
-// import Piechart from "./Piechart";
+import Regform from "./RegistrationForm" 
+import Udashboard from "./User-dashboard"
 
 export default function HomeP1() {
   const [showSecondImage, setShowSecondImage] = useState(false);
@@ -32,25 +32,12 @@ export default function HomeP1() {
           )}
         </div>
       </div>
-
-      <div className="Dashboard-container">
-        <div className="status-display-container">
-          <div className="status-display">
-            <div className="status-box">Balance</div>
-            <div className="status-box">Payment Status</div>
-            <div className="status-box">xyz</div>
-          </div>
-          <div className="line-graph">
-            <Chart />
-          </div>
-        </div>
-        <div className="payment-display">
-          <div>Total Tax Paid</div>
-          <div>Dues</div>
-          <div>Pts Earned</div>
-          {/* <Piechart /> */}
-        </div>
-      </div>
+<div>
+  <Udashboard></Udashboard>
+</div>
+    <div>
+      <Regform></Regform>
+    </div>
     </>
   );
 }
