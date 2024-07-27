@@ -97,9 +97,9 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/signin", (req, res) => {
-    const { govIdInfo , mobileNumber ,  password , userName  } = req.body;
+    const { govIdInfo , mobileNumber, userName} = req.body;
 
-    if (!govIdInfo) {
+    if (!govIdInfo , !mobileNumber , !userName ) {
         return res.status(422).json({ error: "Please Add Email and Password" })
     }
 

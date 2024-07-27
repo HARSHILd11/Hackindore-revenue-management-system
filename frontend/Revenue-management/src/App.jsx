@@ -4,18 +4,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import UserDashboard from './assets/components/User-dashboard'; 
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
 
 import Home from './assets/components/Home';
+import RegistrationForm from './assets/components/RegistrationForm';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
+    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/signup" element={<RegistrationForm/>} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
