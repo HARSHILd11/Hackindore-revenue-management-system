@@ -9,15 +9,13 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-} from 'chart.js';   
-
+} from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
-  LineElement,   
-
+  LineElement,
   ArcElement
 );
 

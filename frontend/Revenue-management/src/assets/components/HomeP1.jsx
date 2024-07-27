@@ -40,9 +40,7 @@ export default function HomeP1() {
     <div>
       <Slider></Slider>
     </div>
-   <div>
-   <PropertyTaxCalculator></PropertyTaxCalculator>
-   </div>
+   
     </>
   );
 }
