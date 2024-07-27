@@ -16,5 +16,31 @@
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/2269d986-4fcf-4208-a7b4-9aa30d43b85f/webchat/config.js" defer></script>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      document.getElementById('payButton').onclick = function () {
+        var options = {
+            "key": "rzp_test_moY72rUjlJiM5d",
+            "amount": 50000, // Amount in paise (INR 500)
+            "currency": "INR",
+            "name": "Your Company Name",
+            "description": "Purchase Description",
+            "image": "https://your-company-logo-url.com/logo.png",
+            "handler": function (response){
+                alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": "Your Name",
+                "email": "your.email@example.com",
+                "contact": "9999999999"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp = new Razorpay(options);
+        rzp.open();
+    };
+    </script>
   </body>
 </html>
