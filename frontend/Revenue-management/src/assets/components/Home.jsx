@@ -13,6 +13,7 @@ export default function Home() {
     <>
     
     <HomeP1></HomeP1>
+   
     <SignUp></SignUp>
  
     </>
