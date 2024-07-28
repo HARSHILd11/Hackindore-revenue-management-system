@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './HomeP1.css';
 import home_side from '../img/home-side-img.gif';
-import secondImage from '../img/home-side-image.png';
 
+import HomeP2 from './HomeP2'
 import PropertyTaxCalculator from './PropertyTaxCalculator';
 
 import Slider from "./Slider"
@@ -27,19 +27,19 @@ export default function HomeP1() {
         </div>
 
         <div id="homeP1-2">
-          {showSecondImage ? (
-            <img src={secondImage} alt="Second" />
-          ) : (
             <img src={home_side} alt="Home Side" />
-          )}
+       
         </div>
       </div>
 
     
 
+    <HomeP2></HomeP2>
     <div>
       <Slider></Slider>
     </div>
+
+
    
     </>
   );
