@@ -1,7 +1,7 @@
 import React from 'react'
 
 import HomeP1 from './HomeP1'
-import SignUp from './Signup'
+import Footer from './Footer'
 
 
 
@@ -13,6 +13,7 @@ export default function Home() {
     <>
     
     <HomeP1></HomeP1>
+    <Footer></Footer>
    
 
     </>
