@@ -14,9 +14,9 @@ export default function DashBoard() {
         <div className="upper-dashboard " id='bdr'>
           <div className="status-display-container" id='bdr'>
             <div className="status-display" id='bdr'>
-              <div className="status-box sb-1">Balance: <b>-10000</b> </div>
-              <div className="status-box sb-2">Payment Status : <br /> <b> pending</b> </div>
-              <div className="status-box sb-3">Your Assets</div>
+              <div className="status-box sb-1"  id='bdr'>Balance: <b>-10000</b> </div>
+              <div className="status-box sb-2"  id='bdr'>Payment Status : <br /> <b> pending</b> </div>
+              <div className="status-box sb-3" id='bdr'> Your Assets</div>
             </div>
             <div className="line-graph" id='bdr'>
               <Chart />
@@ -50,7 +50,7 @@ export default function DashBoard() {
             <span>Water Tax</span>
             <BarChart></BarChart>
           </div>
-          <div className='ld-status-box status-box'>Payment history
+          <div className='ld-status-box status-box'  id='bdr'>Payment history
 
           </div>
           

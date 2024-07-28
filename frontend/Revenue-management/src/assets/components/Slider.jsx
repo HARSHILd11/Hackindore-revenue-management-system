@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Slider.css';
-import img1 from "../img/img1.jpg"
+import img1 from "../img/img1.jpeg"
 import img2 from "../img/img2.jpg"
+import img3 from "../img/img3.jpg"
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slides, setSlides] = useState([
     { id: 1, image: img1 },
-    { id: 2, image: img2 }
+    { id: 2, image: img2 },
+    { id: 3, image: img3 }
   ]);
 
   useEffect(() => {
