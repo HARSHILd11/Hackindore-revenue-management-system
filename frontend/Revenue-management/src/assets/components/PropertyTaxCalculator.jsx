@@ -83,7 +83,8 @@ const PropertyTaxCalculator = () => {
             </tr>
           </tbody>
         </table>
-        <button className="btn btn-primary" onClick={calculateTax}>Calculate</button>
+
+        <input type="text" value={"Calculate"} onClick={calculateTax} />
         <button className="btn btn-secondary">Cancel</button>
       </form>
       <div className="output-box">

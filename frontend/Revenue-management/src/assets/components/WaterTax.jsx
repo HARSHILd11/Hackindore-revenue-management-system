@@ -44,7 +44,8 @@ const WaterTaxCalculator = () => {
           <label htmlFor="noOfDays">No of Days *</label>
           <input type="number" id="noOfDays" className="form-control" value={noOfDays} onChange={e => setNoOfDays(e.target.value)} />
         </div>
-        <button className="btn btn-primary" onClick={calculateWaterTax}>Calculate</button>
+        
+        <input type="text" value={"Calculate"} onClick={calculateWaterTax} />
         <button className="btn btn-secondary">Cancel</button>
       </form>
       <div className="output-box">
