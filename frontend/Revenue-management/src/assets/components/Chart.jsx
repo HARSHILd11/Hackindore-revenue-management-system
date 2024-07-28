@@ -35,9 +35,7 @@ const data = [
   },
   {
     name: '2025',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    
   },
   {
     name: 'Page G',
@@ -45,40 +43,46 @@ const data = [
     pv: 4300,
     amt: 2100,
   },
-];
+];  
 
 export default class Example extends PureComponent {
+
+
+  componentDidMount() {
+    // Fetch data from local data.json file when component mounts
+    fetch('/data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        console.log(response);
+        return response.json();
+      })
+      .then(data => {
+        // Process the fetched data if needed
+        const processedData = data.map(user => ({
+          name: user.userId,
+          propertyTax: user.propertyTax,
+          waterTax: user.waterTax,
+          garbageTax: user.garbageTax,
+          others: user.others,
+          balance: user.balance,
+          rewards: user.rewards,
+          dueTaxes: user.dueTaxes,
+        }));
+        // Update the state with the processed data
+        this.setState({ data: processedData });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        this.notifyA('Sucessfully fetched user details .');
+      });
+  }
+
   // Toast notification functions
   notifyA = (msg) => toast.success(msg);
   notifyB = (msg) => toast.error(msg);
 
-  postData = () => {
-    fetch("http://localhost:8080/userDetails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        id: "66a56fb6562d712da124627e"
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-      // Check if there is an error in the response
-      if (data.error) {
-        // Notify user of the error
-        this.notifyB(data.error);
-      } else {
-        // Log the data if successful
-        console.log(data);
-      }
-    })
-    .catch(error => {
-      // Handle any errors that occur during the fetch
-      console.error("Error:", error);
-      this.notifyB("An error occurred while fetching user details.");
-    });
-  };
 
   handleChange = (event) => {
     // Handle the change event for the input field
