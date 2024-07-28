@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Home from './assets/components/Home';
-import RegistrationForm from './assets/components/RegistrationForm';
+
 import Calculator from './assets/components/Calculator';
 import Signup from './assets/components/Signup';
 import Signin from './assets/components/Signin';
@@ -25,9 +25,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/user-dashboard" element={<UserDashboard />} />
-      <Route path="/signup" element={<RegistrationForm/>} />
-      <Route path='/calculator' element={<Calculator></Calculator>}></Route>
       <Route path="/signup" element={<Signup/>} />
+      <Route path='/calculator' element={<Calculator></Calculator>}></Route>
+
       <Route path="/signin" element={<Signin/>} />
     </Routes>
     <ToastContainer theme='light'></ToastContainer>

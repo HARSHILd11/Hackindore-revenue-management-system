@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HomeP1.css';
 import home_side from '../img/home-side-img.gif';
 import secondImage from '../img/home-side-image.png';
-import Regform from "./RegistrationForm" 
+
 import PropertyTaxCalculator from './PropertyTaxCalculator';
 
 import Slider from "./Slider"
