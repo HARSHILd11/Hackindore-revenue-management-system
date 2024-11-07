@@ -7,7 +7,7 @@ const {UserDetails}=require("./models/userdetails");
 
 const port = process.env.port || 8080
 const mongoose = require("mongoose")
-const url = "mongodb+srv://2mohitsoni:Mohit1234@cluster0.wjfspkb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const url = process.env.backend_link
 
 mongoose.connect(url)
 mongoose.connection.on('connected', () => console.log('connected'));
